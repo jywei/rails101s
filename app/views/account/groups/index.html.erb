@@ -14,12 +14,12 @@
     </thead>
 
     <tbody>
-      <% @groups.each do |group| %>
+      <%= @groups.each do |group| %>
         <tr>
           <td> # </td>
           <td> <%= link_to(group.title, group_path(group)) %> </td>
           <td> <%= group.description %> </td>
-          <td> <%= group.posts.count %> </td>
+          <td> <%= group.posts.size %> </td>
           <td> <%= group.updated_at %> </td>
         </tr>
       <% end %>
