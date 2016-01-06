@@ -9,7 +9,7 @@ gem "devise"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
-# gem 'sqlite3'
+gem 'sqlite3', group: :development
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -37,14 +37,16 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-group :development do
-  gem "brakeman", require: false
-  gem "rails_best_practices", require: false
-  gem "sqlite3"
-end
+#group :development do
+  #gem "brakeman", require: false
+  #gem "rails_best_practices", require: false
+  #gem "sqlite3"
+#end
 
 group :production do
   gem "mysql2"
+  gem "pg"
+  gem "rails_12factor"
 end
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -55,5 +57,5 @@ end
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-end
+#end
 
